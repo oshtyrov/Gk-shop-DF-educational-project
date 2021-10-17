@@ -8,6 +8,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 import json
 import os
+import sys  
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -132,27 +133,9 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'geekshop',
-#         'USER': 'postgres',
-#         'PASSWORD': '',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432',
-#     }
-# }
-
 CACHE_MIDDLEWARE_ALIAS = 'default'
 CACHE_MIDDLEWARE_SECONDS = 120
 CACHE_MIDDLEWARE_KEY_PREFIX = 'geekshop'  # префикс для ключей кеширования
-
-# CACHES = {
-#        'default': {
-#            'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-#            'LOCATION': '127.0.0.1:11211',
-#        }
-# }
 
 CACHES = {
     "default": {
@@ -166,6 +149,7 @@ CACHES = {
 }
 
 LOW_CACHE = True  # True - значит кэш включен
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -212,10 +196,10 @@ LOGIN_URL = '/auth/login/'
 
 DOMAIN_NAME = 'http://localhost:8000'
 
-EMAIL_HOST = 'smtp.mail.ru'
-EMAIL_PORT = '465'
-EMAIL_HOST_USER = 'почта'
-EMAIL_HOST_PASSWORD = 'пароль'
+    EMAIL_HOST = 'smtp.mail.ru'
+    EMAIL_PORT = '465'
+    EMAIL_HOST_USER = 'почта'
+    EMAIL_HOST_PASSWORD = 'пароль'
 
 EMAIL_USE_SSL = True
 
